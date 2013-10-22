@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="mvcleadermodel">
+  <DataContextMoniker Name="/mvcleadermodelDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e7c775e5-d4dc-4634-8c71-f7cef9956998" absoluteBounds="0.75, 4.125, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/mvcleadermodelDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f667dae1-af2f-4137-a33b-4dc0bc7390ec" absoluteBounds="0.765, 4.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="973861b8-abe4-4f3d-8788-ba752d71a656" absoluteBounds="0.75, 1.125, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/mvcleadermodelDataContext/Skill" />
+      <nestedChildShapes>
+        <elementListCompartment Id="73e7f8ed-05ff-47be-b94f-5f8fe8325fe1" absoluteBounds="0.765, 1.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c720fc43-5439-470f-be9e-af5e539e1d4f" absoluteBounds="3.5, 0.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/mvcleadermodelDataContext/SkillPerUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8de9d89c-1fd9-4e48-8d9a-5bed2b572191" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.72199625651042); (3.5 : 1.72199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/mvcleadermodelDataContext/Skill/MVCSkill_MVCSkillsPerUser" />
+      <nodes>
+        <classShapeMoniker Id="973861b8-abe4-4f3d-8788-ba752d71a656" />
+        <classShapeMoniker Id="c720fc43-5439-470f-be9e-af5e539e1d4f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.72199625651042); (4.5 : 4.72199625651042); (4.5 : 2.45359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/mvcleadermodelDataContext/User/MVCUser_MVCSkillsPerUser" />
+      <nodes>
+        <classShapeMoniker Id="e7c775e5-d4dc-4634-8c71-f7cef9956998" />
+        <classShapeMoniker Id="c720fc43-5439-470f-be9e-af5e539e1d4f" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

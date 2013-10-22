@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DataSource" Class="mvcleadermodelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=vser02.corp.khmechelen.be;User ID=IMM1094" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DataSourceConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="IMM1094.MVCUsers" Member="Users">
+    <Type Name="User">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="MVCUser_MVCSkillsPerUser" Member="SkillPerUsers" ThisKey="id" OtherKey="fk_user_id" Type="SkillPerUser" />
+    </Type>
+  </Table>
+  <Table Name="IMM1094.MVCSkills" Member="Skills">
+    <Type Name="Skill">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="skill" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="MVCSkill_MVCSkillsPerUser" Member="SkillPerUsers" ThisKey="id" OtherKey="fk_skill_id" Type="SkillPerUser" />
+    </Type>
+  </Table>
+  <Table Name="IMM1094.MVCSkillsPerUser" Member="SkillPerUsers">
+    <Type Name="SkillPerUser">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fk_user_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_skill_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[level]" Member="level" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MVCSkill_MVCSkillsPerUser" Member="Skill" ThisKey="fk_skill_id" OtherKey="id" Type="Skill" IsForeignKey="true" />
+      <Association Name="MVCUser_MVCSkillsPerUser" Member="User" ThisKey="fk_user_id" OtherKey="id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
